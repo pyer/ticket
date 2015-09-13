@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+one:
+  id:           1
+  name:        'P1'
+  description: 'Project #1'
+
+two:
+  id:           2
+  name:        'P2'
+  description: 'Project #2'
+
+three:
+  id:           3
+  name:        'P3'
+  description: 'Project #3'
+

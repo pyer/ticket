@@ -1,0 +1,29 @@
+<% reset_cycle %>
+<table class="list">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Author</th>
+      <th>Created at</th>
+      <th>Owner</th>
+      <th>Updated at</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @issues.each do |t| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td><%= t.id %></td>
+      <td><%= project_name(t.id) %></td>
+      <td><%= t.description %></td>
+      <td><%= t.status %></td>
+      <td><%= t.author %></td>
+      <td><%= t.created_on.strftime("%F %T") %></td>
+      <td><%= t.owner %></td>
+      <td><%= t.updated_on.strftime("%F %T") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+<table>

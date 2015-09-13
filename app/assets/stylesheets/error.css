@@ -1,0 +1,18 @@
+/* error.css
+*
+*= require_self
+*/
+
+body {
+  background:#e8eaec;
+  margin:  0;
+  padding: 0;
+}
+
+a img{
+  display: block;
+  border:  0;
+  width:   60%;
+  margin:  auto;
+}
+

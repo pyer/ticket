@@ -1,0 +1,33 @@
+<%= render_flash_messages %>
+
+<div id="issue-form">
+  <form action="/issue" accept-charset="UTF-8" method="post">
+    <table>
+      <tr>
+        <td style="text-align:right;"><label>Project</label></td>
+        <td style="text-align:left;"> <input type="text" name="project" value="" tabindex="1" /></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label>Subject</label></td>
+        <td style="text-align:left;"> <input type="text" name="subject" value="" tabindex="2" /></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label>Description</label></td>
+        <td style="text-align:left;"> <input type="text" name="description" value="" tabindex="3" /></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <%= link_to( image_tag("cancel.png", :size => "32x32"), "/issues/index", :title=>"Cancel" ) %>
+          <%= content_tag :button, :type => :submit, :title=>"Submit" do %>
+                   <%= image_tag("submit.png", :size => "32x32") %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+

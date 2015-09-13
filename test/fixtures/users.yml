@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin:
+  login: admin
+  password: admin
+  name: 'Administrator'
+  admin: true
+  
+pba:
+  login: pba
+  password: pba
+  name: 'Pierre BAZONNARD'
+  admin: false
+
+anom:
+  login: anom
+  password: ''
+  name: 'Anonymous'
+  admin: false
+
+lock:
+  login: lock
+  password: ''
+  name: 'Locked user'
+  admin: false
+  status: 'locked'

@@ -1,0 +1,53 @@
+/* application.css
+*
+*= require_self
+*= require common
+*= require issue
+*= require login
+*= require dashboards
+*
+*/
+/* html {overflow-y:scroll;} */
+
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  color:#303030;
+  background:#e8eaec;
+  margin: 0; padding: 0;
+  min-width: 900px;
+  width: 1300px;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  margin: 8px 0 0 0;
+}
+h2, h3, h4 {
+  border-bottom: 0px;
+}
+h4 { border-bottom: dotted 1px #c0c0c0; }
+
+h2 img { vertical-align:middle; }
+
+p {margin: 0.2em;}
+/***** Links *****/
+
+a, a:link, a:visited{ color: #F8F8F8; text-decoration: none; }
+a:hover, a:active{ color: white; text-decoration: underline;}
+a img{ border: 0; }
+
+a.issue.closed, a.issue.closed:link, a.issue.closed:visited { color: #999; text-decoration: line-through; }
+a.project.closed, a.project.closed:link, a.project.closed:visited { color: #999; }
+a.user.locked, a.user.locked:link, a.user.locked:visited {color: #999;}
+
+div.modal { border-radius:5px; background:#fff; z-index:50; padding:4px;}
+div.modal h3.title {display:none;}
+div.modal p.buttons {text-align:right; margin-bottom:0;}
+div.modal .box p {margin: 0.3em 0;}
+
+/* Patch for Chrome */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+

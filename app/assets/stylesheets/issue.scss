@@ -1,0 +1,22 @@
+/***** Issue  *****/
+#issue-form {margin:100px;}
+#issue-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #0C0C40; background-color:#DDEEFF; }
+#issue-form table td {padding: 6px; }
+#issue-form label  {font-weight: bold;}
+#issue-form input  { width: 300px; padding-left:0.5em; }
+#issue-form button {
+  cursor: pointer;
+  border: 0;
+  background-color: #DDEEFF;
+}
+/*
+#issue-form input#username, #issue-form input#password { width: 300px; padding-left:1em; background:white; }
+#issue-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #0C0C40; background-color:#7EBEEC; }
+#issue-form input#username, #issue-form input#password { width: 300px; background-color:#DEEEFF; }
+#issue-form input#cancel {
+  background: image-url('false.png') no-repeat;
+}
+#issue-form input#submit {
+  background: image-url('true.png') no-repeat;
+}
+*/

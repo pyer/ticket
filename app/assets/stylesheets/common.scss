@@ -1,0 +1,109 @@
+/***** Layout *****/
+/* #wrapper {background: white;} */
+/* #wrapper {background-image: image-url(rails-background.png);} */
+
+#header {
+  min-height:80px;
+  width:100%;
+  background-image: image-url('header-background.png');
+  background-repeat: no-repeat;
+}
+
+/* #footer { background-color: #578bb8; border: 0; color: #fff;} */
+#footer {
+  clear: both;
+  border: 0;
+  font-size: 0.9em;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  background: #0c0c40;
+}
+#footer a { font-weight: bold; }
+
+/* #top-menu {background: #3E5B76; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+*/
+#top-menu {color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+#top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
+#top-menu ul {margin: 0;  padding: 0;}
+#top-menu li {
+  float:left;
+  list-style-type:none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  white-space:nowrap;
+}
+#top-menu a {color: #fff; margin-right: 8px; font-weight: bold;}
+#top-menu a.home, #top-menu a.dashboard, #top-menu a.projects, #top-menu a.issues, #top-menu a.users, #top-menu a.administration, #top-menu a.help { 
+    background-position: 0% 40%;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+#top-menu a.home      { background-image: image-url('home.png'); }
+#top-menu a.dashboard { background-image: image-url('dashboard.png'); }
+#top-menu a.projects  { background-image: image-url('projects.png'); }
+#top-menu a.issues    { background-image: image-url('issues.png'); }
+#top-menu a.users     { background-image: image-url('users.png'); }
+#top-menu a.administration { background-image: image-url('wrench.png'); }
+#top-menu a.help      { background-image: image-url('help.png'); }
+
+#account {float:right;}
+#account li {margin-right: 16px;}
+
+#sub-title    {
+  float:left;
+  color:#f8f8f8;
+  margin: 20px 6px 0px 6px;
+}
+#quick-search {
+  float:right;
+  color:#f8f8f8;
+  margin: 20px 6px 0px 6px;
+}
+
+.search { 
+background-image: image-url('search.png');
+background-position:  0px 0px;
+background-repeat: no-repeat;
+width:  16px;
+height: 16px;
+border: 0px;
+background-color: transparent;
+cursor: pointer;
+}
+.search:hover  {}
+.search:active {background-position: 2px 2px;}
+
+/***** Contextal menu *****/
+#add-item {
+  float:left;
+  color:#f8f8f8;
+  background: image-url('add.png');
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  margin-top:   24px;
+  margin-left: 160px;
+}
+
+/***** Tables *****/
+.odd  {background-color: #e6e7e8;}
+.even {background-color: #f6f7f8;}
+
+table.list {
+          border-collapse: collapse;
+          width: 100%;
+          margin-bottom: 4px;
+}
+table.list th {
+          background-color:#66bcbc;
+          padding: 4px;
+          white-space:nowrap;
+}
+table.list td {
+          text-align:center;
+          vertical-align:top;
+          padding:3px;
+}
+

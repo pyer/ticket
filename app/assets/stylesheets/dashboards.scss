@@ -1,0 +1,50 @@
+// Place all the styles related to the dashboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.ref { position: absolute;
+          font-size: 16px;
+          font-weight: bold;
+          left: 10px;
+          top: 10px;
+          text-decoration: underline;
+}
+
+div.txt { position: absolute;
+          font-size: 12px;
+          font-weight: normal;
+          left: 10px;
+          right: 60px;
+          top: 40px;
+}
+
+table.board {
+          border-collapse: collapse;
+          width: 100%;
+}
+table.board thead {
+          background:#66bcbc;
+          font-size: 16px;
+          font-weight: bold;
+          text-align: left;
+}
+table.board tbody {
+          background:#ffffff;
+}
+table.board th {
+          padding-left: 40px;
+}
+table.board td.postit {
+          background: image-url('postit.png') no-repeat;
+          width:  180px;
+          height: 200px;
+          position: relative;
+          margin: 10px;
+          top: 20px;
+}
+
+table.board td.empty { }
+
+table.board img { position: absolute; left: 80px; top: -18px; }
+// img { position: absolute; left: 80px; top: -18px; }
+

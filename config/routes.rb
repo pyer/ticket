@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get 'dashboard'      => 'dashboards#index'
   get 'projects'       => 'projects#index'
   get 'projects/index' => 'projects#index'
-  get 'projects/new'   => 'projects#new'
+  get 'projects/new'   => 'projects#edit'
   get 'issues'         => 'issues#index'
   get 'issues/index'   => 'issues#index'
-  get 'issues/new'     => 'issues#new'
+  get 'issues/new'     => 'issues#edit'
+  get 'issues/edit'    => 'issues#edit'
   get 'users'          => 'users#index'
   get 'login'          => 'users#login'
   get 'logout'         => 'users#logout'
@@ -18,7 +19,8 @@ Rails.application.routes.draw do
 
   post 'login'         => 'users#login'
   post 'project'       => 'projects#new'
-  post 'issue'         => 'issues#create'
+  post 'issue/create'  => 'issues#create'
+  post 'issue/update'  => 'issues#update'
 
 #  get '*', :to => 'error#not_found'
   get "*any", via: :all, to: "error#not_found"

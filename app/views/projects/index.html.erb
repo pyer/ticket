@@ -7,6 +7,8 @@
       <th>Description</th>
       <th>Created on</th>
       <th>Updated on</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,8 @@
       <td><%= p.description %></td>
       <td><%= p.created_on.strftime("%F") %></td>
       <td><%= p.updated_on.strftime("%F") %></td>
+      <td><%= link_to( image_tag("edit.png",      :size => "16x16"), "/projects/edit?id=#{p.id}",  :title=>"Edit" ) %></td>
+      <td><%= link_to( image_tag("dashboard.png", :size => "16x16"), "/dashboard?project=#{p.id}", :title=>"Dashboard" ) %></td>
     </tr>
   <% end %>
   </tbody>

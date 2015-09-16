@@ -11,39 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519062858) do
+ActiveRecord::Schema.define(version: 1) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dashboards", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "issues", force: :cascade do |t|
-    t.integer  "issue_id",      default: 0,  null: false
-    t.integer  "project_id",    default: 0,  null: false
-    t.string   "subject",       default: "", null: false
+    t.integer  "project_id",  default: 0, null: false
     t.text     "description"
-    t.date     "due_date"
-    t.text     "status"
-    t.text     "author"
-    t.text     "owner"
-    t.integer  "fixed_version"
-    t.integer  "lock_version",  default: 0,  null: false
-    t.datetime "created_on"
+    t.string   "status"
+    t.datetime "created_on",              null: false
+    t.string   "created_by"
     t.datetime "updated_on"
+    t.string   "updated_by"
   end
 
   add_index "issues", ["id"], name: "issues_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "project_id",  default: 0,  null: false
     t.string   "name",        default: "", null: false
     t.text     "description"
-    t.datetime "created_on"
+    t.datetime "created_on",               null: false
+    t.string   "created_by"
     t.datetime "updated_on"
+    t.string   "updated_by"
   end
 
   add_index "projects", ["id"], name: "projects_id", using: :btree
@@ -51,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150519062858) do
   create_table "statuses", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
-    t.datetime "created_on"
+    t.datetime "created_on", null: false
     t.datetime "updated_on"
   end
 
@@ -64,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150519062858) do
     t.boolean  "admin",         default: false, null: false
     t.string   "status"
     t.datetime "last_login_on"
-    t.datetime "created_on"
+    t.datetime "created_on",                    null: false
     t.datetime "updated_on"
   end
 

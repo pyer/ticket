@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :dashboards
+#  resources :dashboards
   root :to => 'home#index', :as => 'home'
 
   get 'home'            => 'home#index'

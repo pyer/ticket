@@ -1,7 +1,7 @@
 <%= render_flash_messages %>
 
 <div id="issue-form">
-  <form action="/issue" accept-charset="UTF-8" method="post">
+  <form action="<%= @action %>" accept-charset="UTF-8" method="post">
     <table>
       <tr>
         <td style="text-align:right;"><label>Project</label></td>

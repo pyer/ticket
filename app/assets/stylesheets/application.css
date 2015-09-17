@@ -2,8 +2,9 @@
 *
 *= require_self
 *= require common
-*= require issue
 *= require login
+*= require project
+*= require issue
 *= require dashboards
 *
 */

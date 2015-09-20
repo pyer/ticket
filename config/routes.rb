@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard'       => 'dashboards#index'
   get 'issues'          => 'issues#index'
   get 'issues/index'    => 'issues#index'
-  get 'issues/new'      => 'issues#edit'
+  get 'issues/new'      => 'issues#new'
   get 'issues/edit'     => 'issues#edit'
   get 'projects'        => 'projects#index'
   get 'projects/index'  => 'projects#index'

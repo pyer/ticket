@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+one:
+  id:           1
+  project_id:   1
+  description: 'Issue #1'
+  status:      'To do'
+  created_on:  '2015-09-20'
+  created_by:  'pba'
+
+two:
+  id:           2
+  project_id:   1
+  description: 'Issue #2'
+  status:      'To do'
+  created_on:  '2015-09-20'
+  created_by:  'pba'
+

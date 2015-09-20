@@ -1,0 +1,26 @@
+    <table>
+      <tr>
+        <td style="text-align:right;"><label>Project</label></td>
+        <td style="text-align:left;"> <input type="text" name="project" value="<%= @project %>" tabindex="1" /></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label>Description</label></td>
+        <td style="text-align:left;"> <input type="text" name="description" value="<%= @description %>" tabindex="2" /></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label>Status</label></td>
+        <td style="text-align:left;"> <input type="text" name="status" value="<%= @status %>" tabindex="3" /></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <%= link_to( image_tag("cancel.png", :size => "32x32"), "/issues/index", :title=>"Cancel" ) %>
+          <%= content_tag :button, :type => :submit, :title=>"Submit" do %>
+                   <%= image_tag("submit.png", :size => "32x32") %>
+          <% end %>
+        </td>
+      </tr>
+    </table>

@@ -32,9 +32,9 @@ class Setup < ActiveRecord::Migration
     end
 
     create_table :issues, :force => true do |t|
-      t.column "project_id", :integer, :default => 0, :null => false
       t.column "description", :text
       t.column "status", :string
+      t.column "project_id", :integer, :default => 0, :null => false
       t.column "created_on", :timestamp, :null => false
       t.column "created_by", :string
       t.column "updated_on", :timestamp

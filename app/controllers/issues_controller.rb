@@ -10,24 +10,24 @@ class IssuesController < ApplicationController
 
   def new
     @sub_title = "New issue"
-    @project, @description, @status = Issue.new.default_values
+    @description, @status, @project_id = Issue.new.default_values
   end
 
   def create
     issue = Issue.new
-    issue.i_create(params[:project], params[:description], params[:status])
+    issue.i_create(params[:description], params[:status], params[:project_id])
     issue.save
     redirect_to issues_url
   end
 
   def edit
     @current_id = params[:id]
-    @sub_title  = "Edit issue ##{current}"
+    @sub_title  = "Edit issue ##{@current_id}"
     issue = Issue.find(@current_id.to_i)
     if issue.nil?
-      @project, @description, @status = Issue.new.default_values
+      @description, @status, @project_id = Issue.new.default_values
     else
-      @project, @description, @status = issue.current_values
+      @description, @status, @project_id = issue.current_values
     end
   end
 
@@ -35,7 +35,7 @@ class IssuesController < ApplicationController
     @current_id = params[:id]
     issue = Issue.find(@current_id.to_i)
     if !issue.nil?
-      issue.i_update(params[:project], params[:description], params[:status])
+      issue.i_update(params[:description], params[:status], params[:project_id])
       issue.save
     end
     redirect_to issues_url

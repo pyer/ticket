@@ -10,34 +10,22 @@ class IssuesController < ApplicationController
 
   def new
     @sub_title = "New issue"
-    @description, @status, @project_id = Issue.new.default_values
-  end
-
-  def create
-    issue = Issue.new
-    issue.i_create(params[:description], params[:status], params[:project_id])
-    issue.save
-    redirect_to issues_url
+    @description, @status, @project_id = Issue.default_values
   end
 
   def edit
-    @current_id = params[:id]
-    @sub_title  = "Edit issue ##{@current_id}"
-    issue = Issue.find(@current_id.to_i)
-    if issue.nil?
-      @description, @status, @project_id = Issue.new.default_values
-    else
-      @description, @status, @project_id = issue.current_values
-    end
+    id = params[:id]
+    @sub_title  = "Edit issue ##{id}"
+    @description, @status, @project_id = Issue.current_values(id)
+  end
+
+  def create
+    Issue.create_new(params[:description], params[:status], params[:project_id])
+    redirect_to issues_url
   end
 
   def update
-    @current_id = params[:id]
-    issue = Issue.find(@current_id.to_i)
-    if !issue.nil?
-      issue.i_update(params[:description], params[:status], params[:project_id])
-      issue.save
-    end
+    Issue.update_existing(params[:id], params[:description], params[:status], params[:project_id])
     redirect_to issues_url
   end
 

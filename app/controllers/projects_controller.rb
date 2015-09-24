@@ -14,9 +14,9 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @sub_title  = "Edit project ##{id}"
-    @name, @description = Project.current_values(id)
+    @current_id = params[:id]
+    @sub_title  = "Edit project ##{@current_id}"
+    @name, @description = Project.current_values(@current_id)
   end
 
   def create

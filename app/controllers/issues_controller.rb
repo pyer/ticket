@@ -14,9 +14,9 @@ class IssuesController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @sub_title  = "Edit issue ##{id}"
-    @description, @status, @project_id = Issue.current_values(id)
+    @current_id = params[:id]
+    @sub_title  = "Edit issue ##{@current_id}"
+    @description, @status, @project_id = Issue.current_values(@current_id)
   end
 
   def create

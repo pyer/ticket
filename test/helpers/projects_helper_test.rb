@@ -6,4 +6,9 @@ class ProjectsHelperTest < ActionView::TestCase
     assert_equal "P1", project_name(1)
   end
 
+  test "get project id" do
+    assert_equal 0, project_id('undefined')
+    assert_equal 1, project_id('P1')
+  end
+
 end

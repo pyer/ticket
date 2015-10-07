@@ -20,13 +20,13 @@
       <td><%= t.id %></td>
       <td><%= t.description %></td>
       <td><%= t.status %></td>
-      <td><%= project_name(t.id) %></td>
+      <td><%= project_name(t.project_id) %></td>
       <td><%= t.created_on.strftime("%F %T") %></td>
       <td><%= t.created_by %></td>
       <td><%= t.updated_on.strftime("%F %T") %></td>
       <td><%= t.updated_by %></td>
       <td><%= link_to( image_tag("edit.png",      :size => "16x16"), "/issues/edit?id=#{t.id}",  :title=>"Edit" ) %></td>
-      <td><%= link_to( image_tag("dashboard.png", :size => "16x16"), "/dashboard?project=#{t.id}", :title=>"Dashboard" ) %></td>
+      <td><%= link_to( image_tag("dashboard.png", :size => "16x16"), "/dashboard?project=#{t.project_id}", :title=>"Dashboard" ) %></td>
     </tr>
   <% end %>
   </tbody>

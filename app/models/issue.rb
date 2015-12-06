@@ -34,4 +34,11 @@ class Issue < ActiveRecord::Base
     end
   end
 
+  @rows = 3
+
+  def self.select_where_status_is(status)
+    #issue.find_by(status: "#{status}").order(id:).limit(@rows)
+    Issue.where("status = '#{status}'")
+  end
+
 end

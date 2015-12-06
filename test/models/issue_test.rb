@@ -47,4 +47,17 @@ class IssueTest < ActiveSupport::TestCase
     assert_equal   issue.updated_by, 'pba'
   end
 
+  test "no issue with unknown status" do
+    assert_equal [], Issue.select_where_status_is('_X_')
+  end
+
+  test "1 'Done' issue" do
+    a = Issue.select_where_status_is('Done')
+    assert_equal 1, a.length
+  end
+
+  test "2 'To do' issues" do
+    a = Issue.select_where_status_is('To do')
+    assert_equal 2, a.length
+  end
 end

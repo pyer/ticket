@@ -7,7 +7,7 @@
         <td style="text-align:right;"><label>Status</label></td>
         <td style="text-align:left;">
         <select name="status">
-          <% Status.order(:id).all.each do |s| %>
+          <% Status.list.each do |s| %>
           <option <%= 'selected="selected"' if @status == s.name %> value="<%= s.name %>"><%= s.name %></option>
           <% end %>
         </select>
@@ -17,7 +17,7 @@
         <td style="text-align:right;"><label>Project</label></td>
         <td style="text-align:left;">
         <select name="project_id">
-          <% Project.order(:name).all.each do |p| %>
+          <% Project.list.each do |p| %>
           <option <%= 'selected="selected"' if @project_id == p.id %> value="<%= p.id %>"><%= p.name %></option>
           <% end %>
         </select>

@@ -5,11 +5,4 @@ class Status < ActiveRecord::Base
     Status.order(:id).all
   end
 
-  def self.number
-    @number
-  end
-
-  private
-  @number = Status.count
-
 end

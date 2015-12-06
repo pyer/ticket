@@ -32,4 +32,7 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def self.list
+    Project.order(:name).all
+  end
 end

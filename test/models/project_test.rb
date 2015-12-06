@@ -46,4 +46,12 @@ class ProjectTest < ActiveSupport::TestCase
     assert_equal   project.updated_by, 'pba'
   end
 
+  test "check list of projects" do
+    prj = []
+    Project.list.each do |p|
+      prj.push p.name
+    end
+    assert_equal ["P1", "P2", "P3"], prj
+  end
+  
 end

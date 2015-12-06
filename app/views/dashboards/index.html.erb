@@ -7,89 +7,19 @@
     </tr>
   </thead>
   <tbody>
+      <% selected_tickets.each do |st| %>
       <tr>
-        <td class="postit">
-              <%= image_tag 'pins/green.png' %>
-              <div class="ref"># 1230</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/green.png' %>
-              <div class="ref"># 1231</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/yellow.png' %>
-              <div class="ref"># 1232</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/red.png' %>
-              <div class="ref"># 1233</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/red.png' %>
-              <div class="ref"># 1236</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/blue.png' %>
-              <div class="ref"># 1239</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="postit">
-              <%= image_tag 'pins/blue.png' %>
-              <div class="ref"># 2230</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="empty">
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/yellow.png' %>
-              <div class="ref"># 2232</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/green.png' %>
-              <div class="ref"># 2233</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/red.png' %>
-              <div class="ref"># 2236</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/blue.png' %>
-              <div class="ref"># 2239</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="postit">
-              <%= image_tag 'pins/blue.png' %>
-              <div class="ref"># 3230</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="empty">
-        </td>
-        <td class="empty">
-        </td>
-        <td class="empty">
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/red.png' %>
-              <div class="ref"># 3236</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-        <td class="postit">
-              <%= image_tag 'pins/blue.png' %>
-              <div class="ref"># 3239</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, eros et gravida maximus, urna sem tincidunt dui, sit amet feugiat risus odio vitae.</div>
-        </td>
-      </tr>
+        <% st.each do |t| %>
+          <% if t.nil? %>
+            <td class="empty"></td>
+          <% else %>
+            <td class="postit">
+              <%= red_tag %>
+              <div class="ref"># <%= t.id %></div>
+              <div class="txt"><%= t.description %></div>
+            </td>
+          <% end %>
+        <% end %>
+      <% end %>
   </tbody>
 </table>

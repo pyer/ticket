@@ -41,4 +41,8 @@ class Issue < ActiveRecord::Base
     Issue.where("status = '#{status}'")
   end
 
+  def self.select_where_project_and_status_are(project,status)
+    Issue.where("project_id = #{project} and status = '#{status}'")
+  end
+
 end

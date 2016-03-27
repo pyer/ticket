@@ -1,3 +1,4 @@
+desc "Clean all"
 task :clean do
   Rake::Task["assets:clobber"].invoke
   Rake::Task["tmp:clear"].invoke

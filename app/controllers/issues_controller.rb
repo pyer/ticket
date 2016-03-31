@@ -29,4 +29,9 @@ class IssuesController < ApplicationController
     redirect_to issues_url
   end
 
+  def move
+    Issue.update_status(params[:id], params[:status])
+#    redirect_to issues_url
+  end
+
 end

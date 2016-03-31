@@ -5,4 +5,8 @@ class Status < ActiveRecord::Base
     Status.order(:id).all
   end
 
+  def self.name_where_id_is(id)
+    Status.find(id.to_i).name
+  end
+
 end

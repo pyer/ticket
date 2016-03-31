@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post 'project/update' => 'projects#update'
   post 'issue/create'   => 'issues#create'
   post 'issue/update'   => 'issues#update'
+  post 'issue/move'     => 'issues#move'
 
 #  get '*', :to => 'error#not_found'
   get "*any", via: :all, to: "error#not_found"

@@ -43,7 +43,13 @@ table.board td.postit {
           top: 20px;
 }
 
-table.board td.empty { }
+table.board td.empty {
+          width:  180px;
+          height: 200px;
+          position: relative;
+          margin: 10px;
+          top: 20px;
+}
 
 table.board img { position: absolute; left: 80px; top: -18px; }
 // img { position: absolute; left: 80px; top: -18px; }

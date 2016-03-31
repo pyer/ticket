@@ -34,6 +34,16 @@ class Issue < ActiveRecord::Base
     end
   end
 
+  def self.update_status(id, status_id)
+    issue = Issue.find(id.to_i)
+    if !issue.nil?
+      issue.status      = Status.name_where_id_is(status_id)
+      issue.updated_on  = Time.now
+      issue.updated_by  = User.current.login
+      issue.save
+    end
+  end
+
   @rows = 3
 
   def self.select_where_status_is(status)

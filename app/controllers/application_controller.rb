@@ -3,8 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-#  protect_from_forgery
-#  unless Rails.application.config.consider_all_requests_local
-    #rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
-#  end
+  before_filter :require_login
+
+  private
+  def require_login
+    logger.info "URL: #{request.original_url}"
+    redirect_to home_url if User.current.nil? and request.fullpath != '/' and request.fullpath != '/login'
+  end
+
 end

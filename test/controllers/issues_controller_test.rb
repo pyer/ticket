@@ -39,4 +39,10 @@ class IssuesControllerTest < ActionController::TestCase
     User.logoff
   end
 
+  test "should move an issue" do
+    user = User.try_to_login('pba','pba')
+    post :move, { :id => '1', :status => '2' } 
+    assert_response :success
+    User.logoff
+  end
 end

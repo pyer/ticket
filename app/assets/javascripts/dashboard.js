@@ -23,11 +23,10 @@ request.onload = function () {
 
 
 function post(id,state) {
-  var url = "http://localhost:8080/issue/move?id="+id+"&status="+state;
+  var url = window.location.origin+"/issue/move?id="+id+"&status="+state;
   request.open("POST", url, async);
   request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
   request.send("");
-
 }
 
 function allowDrop(ev) {
@@ -35,8 +34,6 @@ function allowDrop(ev) {
 }
 
 function drag(ev,ref) {
-  //console.log("ref = "+postit.children[1].innerText);
-  console.log("Drag "+ref);
   var issue_id = ref.substring(2);
   ev.dataTransfer.setData("text", issue_id);
 }

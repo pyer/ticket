@@ -32,5 +32,6 @@ pickle-email-*.html
 *.bowerrc
 bower.json
 
-# Ignore pow environment settings
+# Ignore environment settings
 .powenv
+.project

@@ -18,7 +18,8 @@ class ProjectsControllerTest < ActionController::TestCase
   test "should create a project" do
     user = User.try_to_login('pba','pba')
     n = Project.count
-    post :create, { :name => 'new', :description => 'project' }
+    post(:create, params: { name: 'new', description: 'project' })
+    assert_response :found
     assert_redirected_to projects_url
     assert_equal (n+1), Project.count
     User.logoff
@@ -26,14 +27,15 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should edit a project" do
     user = User.try_to_login('pba','pba')
-    get :edit, { :id => '1' }
+    get( :edit, params: { id: '1' })
     assert_response :success
     User.logoff
   end
 
   test "should update a project" do
     user = User.try_to_login('pba','pba')
-    post :update, { :id => '1', :name => 'update', :description => 'project' }
+    post(:update, params: { id: '1', name: 'new', description: 'project' })
+    assert_response :found
     assert_redirected_to projects_url
     User.logoff
   end

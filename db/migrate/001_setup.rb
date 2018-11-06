@@ -1,4 +1,4 @@
-class Setup < ActiveRecord::Migration
+class Setup < ActiveRecord::Migration[5.2]
 
   def self.up
 

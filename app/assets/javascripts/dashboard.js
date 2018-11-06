@@ -41,10 +41,9 @@ function drag(ev,ref) {
 function drop(ev,state) {
   ev.preventDefault();
   var id = ev.dataTransfer.getData("text");
-  console.log("text = "+id);
-  console.log("state = "+state);
+//  console.log("text = "+id);
+//  console.log("state = "+state);
   post(id,state+1);
-//  ev.target.appendChild(document.getElementById(data));
   location.reload(true);
 }
 

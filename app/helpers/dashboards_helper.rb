@@ -1,19 +1,19 @@
 module DashboardsHelper
 
   def blue_tag
-    image_tag 'pins/blue.png'
+    image_tag('pins/blue.png', alt: 'Blue')
   end
  
   def green_tag
-    image_tag 'pins/green.png'
+    image_tag('pins/green.png', alt:'Green')
   end
  
   def red_tag
-    image_tag 'pins/red.png'
+    image_tag('pins/red.png', alt:'Red')
   end
  
   def yellow_tag
-    image_tag 'pins/yellow.png'
+    image_tag('pins/yellow.png', alt:'Yellow')
   end
 
   def current_project

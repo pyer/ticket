@@ -5,8 +5,14 @@ Issues, users and projects are managed.
 
 ticket is a Ruby On Rails application.
 
+## Screenshots
+
+
+
 ## Installation
+
 gem install json
+
 gem install rails
 
 

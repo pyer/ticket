@@ -2,9 +2,9 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 Status.create( name:'To do' )
-Status.create( name:'In progress' )
+Status.create( name:'Work in progress' )
 Status.create( name:'To check' )
-Status.create( name:'Checking' )
+Status.create( name:'Check in progress' )
 Status.create( name:'Checked' )
 Status.create( name:'Done' )
 

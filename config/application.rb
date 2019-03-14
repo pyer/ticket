@@ -21,7 +21,11 @@ module Ticket
     end
 
     def version
-      "1.0"
+      "1.1"
+    end
+
+    def copyright
+      "2015-2019 Pierre BAZONNARD"
     end
 
   end

@@ -2,16 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2015_12_05_173906) do
-
+ActiveRecord::Schema[7.0].define(version: 2015_12_05_173906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,9 +18,9 @@ ActiveRecord::Schema.define(version: 2015_12_05_173906) do
     t.text "description"
     t.string "status"
     t.integer "project_id", default: 0, null: false
-    t.datetime "created_on", null: false
+    t.datetime "created_on", precision: nil, null: false
     t.string "created_by"
-    t.datetime "updated_on"
+    t.datetime "updated_on", precision: nil
     t.string "updated_by"
     t.string "color"
   end
@@ -29,17 +28,17 @@ ActiveRecord::Schema.define(version: 2015_12_05_173906) do
   create_table "projects", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.text "description"
-    t.datetime "created_on", null: false
+    t.datetime "created_on", precision: nil, null: false
     t.string "created_by"
-    t.datetime "updated_on"
+    t.datetime "updated_on", precision: nil
     t.string "updated_by"
   end
 
   create_table "statuses", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.datetime "created_on", null: false
-    t.datetime "updated_on"
+    t.datetime "created_on", precision: nil, null: false
+    t.datetime "updated_on", precision: nil
     t.index ["name"], name: "statuses_name"
   end
 
@@ -49,9 +48,9 @@ ActiveRecord::Schema.define(version: 2015_12_05_173906) do
     t.string "name", null: false
     t.boolean "admin", default: false, null: false
     t.string "status"
-    t.datetime "last_login_on"
-    t.datetime "created_on", null: false
-    t.datetime "updated_on"
+    t.datetime "last_login_on", precision: nil
+    t.datetime "created_on", precision: nil, null: false
+    t.datetime "updated_on", precision: nil
     t.index ["login"], name: "users_login"
   end
 

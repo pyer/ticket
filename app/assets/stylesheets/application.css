@@ -1,21 +1,18 @@
-/* application.css
-*
-*= require_self
-*= require common
-*= require login
-*= require project
-*= require issue
-*= require dashboards
-*
-*/
-/* html {overflow-y:scroll;} */
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * require_tree .
+ * require_self
+ */
 
 body {
   font-family: Verdana, sans-serif;
   font-size: 12px;
   color:#303030;
   background:#e8eaec;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   min-width: 900px;
   width: 1300px;
 }
@@ -32,11 +29,13 @@ h4 { border-bottom: dotted 1px #c0c0c0; }
 h2 img { vertical-align:middle; }
 
 p {margin: 0.2em;}
+
 /***** Links *****/
+
+a img{ border:  0; }
 
 a, a:link, a:visited{ color: #F8F8F8; text-decoration: none; }
 a:hover, a:active{ color: white; text-decoration: underline;}
-a img{ border: 0; }
 
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited { color: #999; text-decoration: line-through; }
 a.project.closed, a.project.closed:link, a.project.closed:visited { color: #999; }
@@ -50,5 +49,347 @@ div.modal .box p {margin: 0.3em 0;}
 /* Patch for Chrome */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+
+/***** Layout *****/
+#header {
+  min-height: 80px;
+  width: 100%;
+  background-image: url(banner.png);
+  background-repeat: no-repeat;
+}
+
+/* #footer { background-color: #578bb8; border: 0; color: #fff;} */
+#footer {
+  clear: both;
+  border: 0;
+  font-size: 0.9em;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  background: #0c0c40;
+}
+
+#footer a {
+  font-weight: bold;
+}
+
+/* #top-menu {background: #3E5B76; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+*/
+#top-menu {
+  color: #fff;
+  height: 1.8em;
+  font-size: 0.8em;
+  padding: 2px 2px 0px 6px;
+}
+
+#top-menu #loggedas {
+  float: right;
+  margin-right: 0.5em;
+  color: #fff;
+}
+
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#top-menu li {
+  float: left;
+  list-style-type: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  white-space: nowrap;
+}
+
+#top-menu a {
+  color: #fff;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+#top-menu a.home, #top-menu a.dashboard, #top-menu a.projects, #top-menu a.issues, #top-menu a.users, #top-menu a.administration, #top-menu a.help {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+
+#top-menu a.home {
+  background-image: url("home.png");
+}
+
+#top-menu a.dashboard {
+  background-image: url("dashboard.png");
+}
+
+#top-menu a.projects {
+  background-image: url("projects.png");
+}
+
+#top-menu a.issues {
+  background-image: url("issues.png");
+}
+
+#top-menu a.users {
+  background-image: url("users.png");
+}
+
+#top-menu a.administration {
+  background-image: url("wrench.png");
+}
+
+#top-menu a.help {
+  background-image: url("help.png");
+}
+
+#account {
+  float: right;
+}
+
+#account li {
+  margin-right: 16px;
+}
+
+#sub-title {
+  float: left;
+  color: #f8f8f8;
+  margin: 20px 6px 0px 6px;
+}
+
+#quick-search {
+  float: right;
+  color: #f8f8f8;
+  margin: 20px 6px 0px 6px;
+}
+
+.search {
+  background-image: url("search.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search:active {
+  background-position: 2px 2px;
+}
+
+/***** Contextal menu *****/
+#add-item {
+  float: left;
+  color: #f8f8f8;
+  background: url("add.png");
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  margin-top: 24px;
+  margin-left: 64px;
+}
+
+/***** Tables *****/
+.odd {
+  background-color: #e6e7e8;
+}
+
+.even {
+  background-color: #f6f7f8;
+}
+
+table.list {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+table.list th {
+  background-color: #66bcbc;
+  padding: 4px;
+  white-space: nowrap;
+}
+
+table.list td {
+  text-align: center;
+  vertical-align: top;
+  padding: 3px;
+}
+
+
+div.ref {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  left: 10px;
+  top: 10px;
+  text-decoration: underline;
+}
+
+div.txt {
+  position: absolute;
+  font-size: 12px;
+  font-weight: normal;
+  left: 10px;
+  right: 60px;
+  top: 40px;
+}
+
+table.board {
+  width: 100%;
+}
+
+table.board thead {
+  background: #66bcbc;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+table.board tbody {
+  background: #ffffff;
+}
+
+table.board th {
+  padding-left: 40px;
+}
+
+table.board td.postit {
+  background: url("postit.png") no-repeat;
+  width: 180px;
+  height: 200px;
+  position: relative;
+  margin: 10px;
+  top: 20px;
+}
+
+table.board td.empty {
+  width: 180px;
+  height: 200px;
+  position: relative;
+  margin: 10px;
+  top: 20px;
+}
+
+table.board img {
+  position: absolute;
+  left: 80px;
+  top: -18px;
+}
+
+
+/***** Issue  *****/
+#issue-form {
+  margin: 100px;
+}
+
+#issue-form table {
+  margin-top: 5em;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #0C0C40;
+  background-color: #DDEEFF;
+}
+
+#issue-form table td {
+  padding: 6px;
+}
+
+#issue-form label {
+  font-weight: bold;
+}
+
+#issue-form input {
+  width: 300px;
+  padding-left: 0.5em;
+}
+
+#issue-form button {
+  cursor: pointer;
+  border: 0;
+  background-color: #DDEEFF;
+}
+
+/*
+#issue-form input#username, #issue-form input#password { width: 300px; padding-left:1em; background:white; }
+#issue-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #0C0C40; background-color:#7EBEEC; }
+#issue-form input#username, #issue-form input#password { width: 300px; background-color:#DEEEFF; }
+#issue-form input#cancel {
+  background: url('false.png') no-repeat;
+}
+#issue-form input#submit {
+  background: url('true.png') no-repeat;
+}
+*/
+
+
+/***** Login  *****/
+#login-form {
+  margin: 100px;
+}
+
+#login-form table {
+  margin-top: 5em;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #0C0C40;
+  background-color: #DDEEFF;
+}
+
+#login-form table td {
+  padding: 6px;
+}
+
+#login-form label {
+  font-weight: bold;
+}
+
+#login-form input#username, #login-form input#password {
+  width: 300px;
+  padding-left: 0.5em;
+}
+
+/*
+#login-form input#username, #login-form input#password { width: 300px; padding-left:1em; background:white; }
+#login-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #0C0C40; background-color:#7EBEEC; }
+#login-form input#username, #login-form input#password { width: 300px; background-color:#DEEEFF; }
+*/
+
+
+/***** Project  *****/
+#project-form {
+  margin: 100px;
+}
+
+#project-form table {
+  margin-top: 5em;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #0C0C40;
+  background-color: #DDEEFF;
+}
+
+#project-form table td {
+  padding: 6px;
+}
+
+#project-form label {
+  font-weight: bold;
+}
+
+#project-form input {
+  width: 300px;
+  padding-left: 0.5em;
+}
+
+#project-form button {
+  cursor: pointer;
+  border: 0;
+  background-color: #DDEEFF;
 }
 

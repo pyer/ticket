@@ -9,7 +9,12 @@ Bundler.require(*Rails.groups)
 module Ticket
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.2
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -24,12 +29,13 @@ module Ticket
     end
 
     def version
-      "1.2"
+      "2.0"
     end
 
     def copyright
-      "2015-2022 Pierre BAZONNARD"
+      "2024 Pierre BAZONNARD"
     end
+
 
   end
 end

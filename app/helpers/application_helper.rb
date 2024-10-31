@@ -1,5 +1,3 @@
-# encoding: utf-8
-#
 module ApplicationHelper
 
   # Returns the controller name and action as css classes for the HTML body.

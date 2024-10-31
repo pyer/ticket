@@ -1,0 +1,25 @@
+<table class="board">
+  <thead>
+    <tr>
+      <% statuses.each do |s| %>
+      <td><%= s.name %></td>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+      <% selected_tickets.each do |st| %>
+      <tr>
+        <% st.each do |t| %>
+          <% if t.nil? %>
+            <td class="empty" ondrop="drop(event,this.cellIndex)" ondragover="allowDrop(event)"></td>
+          <% else %>
+            <td class="postit" draggable="true" ondragstart="drag(event,this.children[1].innerHTML)" ondrop="drop(event,this.cellIndex)" ondragover="allowDrop(event)">
+              <%= red_tag %>
+              <div class="ref"># <%= t.id %></div>
+              <div class="txt"><%= t.description %></div>
+            </td>
+          <% end %>
+        <% end %>
+      <% end %>
+  </tbody>
+</table>

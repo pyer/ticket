@@ -1,0 +1,23 @@
+<% reset_cycle %>
+<table class="list">
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Last sign in at</th>
+      <th>Created on</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |u| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td><%= u.login %></td>
+      <td><%= u.name %></td>
+      <td><%= u.admin ? u.status.to_s+' (admin)' : u.status %></td>
+      <td><%= u.last_login_on.to_s %></td>
+      <td><%= u.created_on.strftime("%F") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

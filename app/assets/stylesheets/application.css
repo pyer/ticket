@@ -13,8 +13,6 @@ body {
   background:#e8eaec;
   margin: 0;
   padding: 0;
-  min-width: 900px;
-  width: 1300px;
 }
 
 h1, h2, h3, h4 {
@@ -57,7 +55,6 @@ input:-webkit-autofill {
   min-height: 80px;
   width: 100%;
   background-image: url(banner.png);
-  background-repeat: no-repeat;
 }
 
 /* #footer { background-color: #578bb8; border: 0; color: #fff;} */

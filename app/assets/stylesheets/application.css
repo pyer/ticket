@@ -297,11 +297,13 @@ table.board img {
 
 #issue-form label {
   font-weight: bold;
+  text-align: right;
 }
 
 #issue-form input {
   width: 300px;
   padding-left: 0.5em;
+  text-align: left;
 }
 
 #issue-form button {
@@ -343,11 +345,13 @@ table.board img {
 
 #login-form label {
   font-weight: bold;
+  text-align: right;
 }
 
 #login-form input#username, #login-form input#password {
   width: 300px;
   padding-left: 0.5em;
+  text-align: left;
 }
 
 /*
@@ -377,11 +381,13 @@ table.board img {
 
 #project-form label {
   font-weight: bold;
+  text-align: right;
 }
 
 #project-form input {
   width: 300px;
   padding-left: 0.5em;
+  text-align: left;
 }
 
 #project-form button {

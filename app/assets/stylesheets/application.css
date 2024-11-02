@@ -66,6 +66,7 @@ input:-webkit-autofill {
   padding: 5px;
   text-align: center;
   background: #0c0c40;
+  margin-top: 32px;
 }
 
 #footer a {

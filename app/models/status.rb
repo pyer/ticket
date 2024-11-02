@@ -6,7 +6,7 @@ class Status < ActiveRecord::Base
   end
 
   def self.name_where_id_is(id)
-    Status.find(id.to_i).name
+    Status.find(id).name
   end
 
 end

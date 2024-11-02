@@ -23,7 +23,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.update_existing(id, description, status, project_id)
-    issue = Issue.find(id.to_i)
+    issue = Issue.find(id)
     if !issue.nil?
       issue.description = description
       issue.status      = status
@@ -35,7 +35,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.update_status(id, status_id)
-    issue = Issue.find(id.to_i)
+    issue = Issue.find(id)
     if !issue.nil?
       issue.status      = Status.name_where_id_is(status_id)
       issue.updated_on  = Time.now
@@ -44,7 +44,7 @@ class Issue < ActiveRecord::Base
     end
   end
 
-  @rows = 3
+  # @rows = 3
 
   def self.select_where_status_is(status)
     #issue.find_by(status: "#{status}").order(id:).limit(@rows)

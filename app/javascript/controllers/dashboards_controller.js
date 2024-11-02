@@ -2,55 +2,30 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    connect() {
-      this.element.textContent = "Hello World!"
-    }
-  // You REALLY want async = true.
-  // Otherwise, it'll block ALL execution waiting for server response.
-  //var async = true;
-  var request = new XMLHttpRequest();
   
-  // Before we send anything, we first have to say what we will do when the
-  // server responds. This seems backwards (say how we'll respond before we send
-  // the request? huh?), but that's how Javascript works.
-  // This function attached to the XMLHttpRequest "onload" property specifies how
-  // the HTTP response will be handled. 
-  request.onload = function () {
-    // Because of javascript's fabulous closure concept, the XMLHttpRequest "request"
-    // object declared above is available in this function even though this function
-    // executes long after the request is sent and long after this function is
-    // instantiated. This fact is CRUCIAL to the workings of XHR in ordinary
-    // applications.
-  
-    // You can get all kinds of information about the HTTP response.
-    var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-    var data = request.responseText; // Returned data, e.g., an HTML document.
-  }
-  
-  
-  function post(id,state) {
-    var url = window.location.origin+"/issue/move?id="+id+"&status="+state;
-    request.open("POST", url, async);
-    request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-    request.send("");
-  }
-  
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  
-  function drag(ev,ref) {
-    var issue_id = ref.substring(2);
+  drag(ev) {
+    console.log(ev.type);
+    var issue_id = this.element.children[1].innerHTML.substring(2);
     ev.dataTransfer.setData("text", issue_id);
   }
   
-  function drop(ev,state) {
+  allowDrop(ev) {
+    console.log(ev.type);
     ev.preventDefault();
-    var id = ev.dataTransfer.getData("text");
-  //  console.log("text = "+id);
-  //  console.log("state = "+state);
-    post(id,state+1);
-    location.reload(true);
   }
   
+  drop(ev) {
+    console.log(ev.type);
+    ev.preventDefault();
+    var st = this.element.cellIndex+1;
+    var id = ev.dataTransfer.getData("text");
+    var url = window.location.origin+"/issue/move?id="+id+"&status="+st;
+    console.log(url);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+    xhr.send("");
+    location.reload(true);
+  }
+
 }

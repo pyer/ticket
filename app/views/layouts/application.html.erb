@@ -34,9 +34,9 @@
             <ul>
             <% if User.current %>
               <li>Logged in as <%= User.current.name %></li>
-              <li><a href="/logout">Sign out</a></li>
+              <li><a class="logout" href="/logout">Sign out</a></li>
             <% else %>
-              <li><a href="/login">Sign in</a></li>
+              <li><a class="login" href="/login">Sign in</a></li>
             <% end %>
             </ul>
           </div>

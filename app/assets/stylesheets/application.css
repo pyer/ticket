@@ -78,7 +78,6 @@ input:-webkit-autofill {
 #top-menu {
   color: #fff;
   height: 1.8em;
-  font-size: 0.8em;
   padding: 2px 2px 0px 6px;
 }
 
@@ -107,7 +106,7 @@ input:-webkit-autofill {
   font-weight: bold;
 }
 
-#top-menu a.home, #top-menu a.dashboard, #top-menu a.projects, #top-menu a.issues, #top-menu a.users, #top-menu a.administration, #top-menu a.help {
+#top-menu a.home, #top-menu a.dashboard, #top-menu a.projects, #top-menu a.issues, #top-menu a.users, #top-menu a.administration, #top-menu a.help, #top-menu a.login, #top-menu a.logout {
   background-position: 0% 40%;
   background-repeat: no-repeat;
   padding-left: 20px;
@@ -141,6 +140,14 @@ input:-webkit-autofill {
 
 #top-menu a.help {
   background-image: url("help.png");
+}
+
+#top-menu a.login {
+  background-image: url("locked.png");
+}
+
+#top-menu a.logout {
+  background-image: url("locked.png");
 }
 
 #account {

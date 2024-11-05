@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @sub_title = "Welcome on Ticket application"
+#    redirect_to help_url if User.current.nil?
+    @sub_title = "Dashboard"
   end
 end

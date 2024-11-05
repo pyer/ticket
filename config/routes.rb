@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
 #  resources :dashboards
-  root :to => 'home#index', :as => 'home'
+  root :to => 'help#index', :as => 'home'
 
   get 'home'            => 'home#index'
   get 'dashboard'       => 'dashboards#index'
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'projects/new'    => 'projects#new'
   get 'projects/edit'   => 'projects#edit'
   get 'users'           => 'users#index'
+  get 'help'            => 'help#index'
   get 'login'           => 'users#login'
   get 'logout'          => 'users#logout'
   get '*', :to => 'error#not_found'

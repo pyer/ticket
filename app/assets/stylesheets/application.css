@@ -240,6 +240,8 @@ div.txt {
   left: 10px;
   right: 60px;
   top: 40px;
+  width: 150px;
+  word-wrap: break-word;
 }
 
 table.board {

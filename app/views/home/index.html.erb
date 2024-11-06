@@ -7,14 +7,14 @@
     </tr>
   </thead>
   <tbody>
-      <% selected_tickets.each do |st| %>
+      <% all_tickets.each do |st| %>
       <tr>
         <% st.each do |t| %>
           <% if t.nil? %>
             <td class="empty"></td>
           <% else %>
             <td class="postit">
-              <%= red_tag %>
+              <%= image_tag("pins/#{t.color}.png", alt:"#{t.color}") %>
               <div class="ref"># <%= t.id %></div>
               <div class="txt"><%= t.description %></div>
             </td>

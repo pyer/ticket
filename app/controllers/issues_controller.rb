@@ -20,12 +20,12 @@ class IssuesController < ApplicationController
   end
 
   def create
-    Issue.create_new(params[:description], params[:status], params[:project_id])
+    Issue.create_new(params[:description], params[:color], params[:status], params[:project_id])
     redirect_to issues_url
   end
 
   def update
-    Issue.update_existing(params[:id], params[:description], params[:status], params[:project_id])
+    Issue.update_existing(params[:id], params[:description], params[:color], params[:status], params[:project_id])
     redirect_to issues_url
   end
 

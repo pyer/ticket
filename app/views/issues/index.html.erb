@@ -4,6 +4,7 @@
     <tr>
       <th>ID</th>
       <th>Description</th>
+      <th>Color</th>
       <th>Status</th>
       <th>Project</th>
       <th>Created at</th>
@@ -19,6 +20,7 @@
     <tr class="<%= cycle("odd", "even") %>">
       <td><%= t.id %></td>
       <td><%= t.description %></td>
+      <td><%= t.color %></td>
       <td><%= t.status %></td>
       <td><%= project_name(t.project_id) %></td>
       <td><%= t.created_on.strftime("%F %T") %></td>

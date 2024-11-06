@@ -1,26 +1,9 @@
 module HomeHelper
-
-  def blue_tag
-    image_tag('pins/blue.png', alt: 'Blue')
-  end
- 
-  def green_tag
-    image_tag('pins/green.png', alt:'Green')
-  end
- 
-  def red_tag
-    image_tag('pins/red.png', alt:'Red')
-  end
- 
-  def yellow_tag
-    image_tag('pins/yellow.png', alt:'Yellow')
-  end
-
   def current_project
     params[:project]
   end
 
-  def selected_tickets
+  def all_tickets
     tickets_table = Array.new
     len = 0
     Status.list.each do |s|

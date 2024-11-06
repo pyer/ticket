@@ -4,6 +4,16 @@
         <td><input type="text" id="description" name="description" value="<%= @description %>" tabindex="2" /></td>
       </tr>
       <tr>
+        <td><label for="color">Color</label></td>
+        <td>
+        <select id="color" name="color">
+          <% Issue.colors.each do |color| %>
+          <option <%= 'selected="selected"' if @color == color %> value="<%= color %>"><%= color %></option>
+          <% end %>
+        </select>
+        </td>
+      </tr>
+      <tr>
         <td><label for="status">Status</label></td>
         <td>
         <select id="status" name="status">

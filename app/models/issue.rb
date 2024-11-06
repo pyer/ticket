@@ -5,15 +5,20 @@ class Issue < ActiveRecord::Base
     return '', 'To do', 0
   end
 
+  def self.colors
+    return ['blue', 'green', 'red', 'yellow']
+  end
+
   def self.current_values(id)
     issue = Issue.find(id.to_i)
-    return  issue.description, issue.status, issue.project_id if !issue.nil?
+    return  issue.description, issue.status, issue.color, issue.project_id if !issue.nil?
     return default_values
   end
 
-  def self.create_new(description, status, project_id)
+  def self.create_new(description, color, status, project_id)
     issue = Issue.new
     issue.description = description
+    issue.color       = color
     issue.status      = status
     issue.project_id  = project_id
     issue.created_on  = Time.now
@@ -22,10 +27,11 @@ class Issue < ActiveRecord::Base
     return issue.id
   end
 
-  def self.update_existing(id, description, status, project_id)
+  def self.update_existing(id, description, color, status, project_id)
     issue = Issue.find(id)
     if !issue.nil?
       issue.description = description
+      issue.color       = color
       issue.status      = status
       issue.project_id  = project_id
       issue.updated_on  = Time.now

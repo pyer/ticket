@@ -30,14 +30,16 @@
             <% end %>
           <% end %>
             <li><a class="help"           href="/help">Help</a></li>
+            <% if User.current %>
+              <li><a class="logout"       href="/logout">Sign out</a></li>
+            <% else %>
+              <li><a class="login"        href="/login">Sign in</a></li>
+            <% end %>
           </ul>
           <div id="account">
             <ul>
             <% if User.current %>
               <li>Logged in as <%= User.current.name %></li>
-              <li><a class="logout" href="/logout">Sign out</a></li>
-            <% else %>
-              <li><a class="login" href="/login">Sign in</a></li>
             <% end %>
             </ul>
           </div>

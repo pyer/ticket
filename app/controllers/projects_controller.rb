@@ -19,6 +19,12 @@ class ProjectsController < ApplicationController
     @name, @description = Project.current_values(@current_id)
   end
 
+  def remove
+    @current_id = params[:id]
+    @sub_title  = "Remove project ##{@current_id}"
+    @name, @description = Project.current_values(@current_id)
+  end
+
   def create
     Project.create_new(params[:name], params[:description])
     redirect_to projects_url
@@ -26,6 +32,11 @@ class ProjectsController < ApplicationController
 
   def update
     Project.update_existing(params[:id], params[:name], params[:description])
+    redirect_to projects_url
+  end
+
+  def delete
+    Project.delete_existing(params[:id])
     redirect_to projects_url
   end
 

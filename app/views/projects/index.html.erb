@@ -23,8 +23,8 @@
       <td><%= p.created_by %></td>
       <td><%= p.updated_on.strftime("%F") %></td>
       <td><%= p.updated_by %></td>
-      <td><%= link_to( image_tag("edit.png",      :size => "16x16"), "/projects/edit?id=#{p.id}",  :title=>"Edit" ) %></td>
-      <td><%= link_to( image_tag("dashboard.png", :size => "16x16"), "/dashboard?project=#{p.id}", :title=>"Dashboard" ) %></td>
+      <td><%= link_to( image_tag("edit.png",   :size => "16x16"), "/projects/edit?id=#{p.id}",   :title=>"Edit" ) %></td>
+      <td><%= link_to( image_tag("delete.png", :size => "16x16"), "/projects/remove?id=#{p.id}", :title=>"Remove" ) %></td>
     </tr>
   <% end %>
   </tbody>

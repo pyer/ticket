@@ -11,10 +11,11 @@
       <tr>
         <% st.each do |t| %>
           <% if t.nil? %>
-            <td class="empty"></td>
+            <td class="empty" data-controller="home" data-action="drop->home#drop dragover->home#allowDrop"></td>
           <% else %>
-            <td class="postit">
+            <td class="postit" draggable="true" data-controller="home" data-action="dragstart->home#drag drop->home#drop dragover->home#allowDrop">
               <%= image_tag("pins/#{t.color}.png", alt:"#{t.color}") %>
+              <%= link_to( image_tag("pencil.png", :size => "32x32"), "/issues/edit?id=#{t.id}",  :title=>"Edit" ) %>
               <div class="ref"># <%= t.id %></div>
               <div class="txt"><%= t.description %></div>
             </td>

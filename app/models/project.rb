@@ -32,6 +32,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def self.delete_existing(id)
+    Project.delete(id.to_i)
+  end
+
   def self.list
     Project.order(:name).all
   end

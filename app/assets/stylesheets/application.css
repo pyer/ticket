@@ -280,12 +280,16 @@ table.board td.empty {
   top: 20px;
 }
 
-table.board img {
+td.postit img {
   position: absolute;
   left: 80px;
   top: -18px;
 }
 
+td.postit a img {
+  left: 132px;
+  top:  4px;
+}
 
 /***** Issue  *****/
 #issue-form {

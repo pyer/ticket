@@ -1,0 +1,22 @@
+<%= render_flash_messages %>
+
+<div id="project-form">
+  <form action="/project/delete?id=<%= @current_id %>" accept-charset="UTF-8" method="post">
+    <table>
+      <tr>
+        <td>Remove project '<%= @description %>' ?</td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <%= link_to( image_tag("cancel.png", :size => "32x32"), "/projects/index", :title=>"Cancel" ) %>
+          <%= content_tag :button, :type => :submit, :title=>"Submit" do %>
+                   <%= image_tag("submit.png", :size => "32x32") %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+

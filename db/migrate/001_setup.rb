@@ -2,14 +2,6 @@ class Setup < ActiveRecord::Migration[5.2]
 
   def self.up
 
-    create_table :statuses do |t|
-      t.column "name",  :string
-      t.column "image", :string
-      t.column "created_on", :timestamp, :null => false
-      t.column "updated_on", :timestamp
-    end
-    add_index :statuses, ["name"], :name => "statuses_name"
-
     create_table :users do |t|
       t.column "login",      :string, :null => false
       t.column "password",   :string
@@ -33,6 +25,7 @@ class Setup < ActiveRecord::Migration[5.2]
 
     create_table :issues, :force => true do |t|
       t.column "description", :text
+      t.column "color", :string
       t.column "status", :string
       t.column "project_id", :integer, :default => 0, :null => false
       t.column "created_on", :timestamp, :null => false
@@ -44,7 +37,6 @@ class Setup < ActiveRecord::Migration[5.2]
   end
 
   def self.down
-    drop_table :statuses
     drop_table :users
     drop_table :projects
     drop_table :issues

@@ -2,7 +2,7 @@ class Issue < ActiveRecord::Base
 #  belongs_to :project
 
   def self.default_values
-    return '', 'To do', 0
+    return '', 'blue', 'To do', 0
   end
 
   def self.colors

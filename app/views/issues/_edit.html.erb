@@ -17,8 +17,8 @@
         <td><label for="status">Status</label></td>
         <td>
         <select id="status" name="status">
-          <% Status.list.each do |s| %>
-          <option <%= 'selected="selected"' if @status == s.name %> value="<%= s.name %>"><%= s.name %></option>
+          <% Status.each do |st| %>
+          <option <%= 'selected="selected"' if @status == st %> value="<%= st %>"><%= st %></option>
           <% end %>
         </select>
         </td>

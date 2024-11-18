@@ -5,18 +5,17 @@ class IssuesController < ApplicationController
     @sub_title = "List of issues"
     @add_item  = '<a href="/issues/new">New issue</a>'
     @issues    = Issue.all
-    #@issues    = Issue.order(:created_on).all
   end
 
   def new
     @sub_title = "New issue"
-    @description, @status, @project_id = Issue.default_values
+    @description, @color, @status, @project_id = Issue.default_values
   end
 
   def edit
     @current_id = params[:id]
     @sub_title  = "Edit issue ##{@current_id}"
-    @description, @status, @project_id = Issue.current_values(@current_id)
+    @description, @color, @status, @project_id = Issue.current_values(@current_id)
   end
 
   def create

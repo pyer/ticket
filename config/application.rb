@@ -6,8 +6,8 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# ENV['RAILS_ENV'] = 'development'
-ENV['RAILS_ENV'] = 'production'
+ENV['RAILS_ENV'] = 'development'
+# ENV['RAILS_ENV'] = 'production'
 
 module Ticket
   class Application < Rails::Application

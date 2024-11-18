@@ -6,8 +6,8 @@ module HomeHelper
   def all_tickets
     tickets_table = Array.new
     len = 0
-    Status.list.each do |s|
-      tickets = Issue.select_where_status_is(s.name).to_a
+    visible_status.each do |s|
+      tickets = Issue.select_where_status_is(s).to_a
       len = tickets.length if len < tickets.length
       tickets_table.push(tickets)
     end
@@ -20,8 +20,8 @@ module HomeHelper
   def selected_tickets
     tickets_table = Array.new
     len = 0
-    Status.list.each do |s|
-      tickets = Issue.select_where_project_and_status_are(current_project,s.name).to_a
+    visible_status.each do |s|
+      tickets = Issue.select_where_project_and_status_are(current_project,s).to_a
       len = tickets.length if len < tickets.length
       tickets_table.push(tickets)
     end

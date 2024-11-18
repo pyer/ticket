@@ -8,18 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 #
-Status.create( name:'To do' )
-Status.create( name:'Work in progress' )
-Status.create( name:'To check' )
-Status.create( name:'Check in progress' )
-Status.create( name:'Checked' )
-Status.create( name:'Done' )
 
 User.create( login:'admin',     password:'admin', name:'Administrator',    admin: true )
 User.create( login:'pba',       password:'pba',   name:'Pierre Bazonnard', admin: false )
-User.create( login:'anonymous', password:'',      name:'Anonymous user',   admin: false )
+User.create( login:'guest',     password:'',      name:'Guest',   admin: false )
 
 Project.create( name: 'P1', description: 'first project', created_on: '2015-09-12', created_by: 'pba')
 Project.create( name: 'P2', description: 'second project', created_on: '2015-09-15', created_by: 'pba')
 
-Issue.create( description: 'sample issue', status: 'To do', project_id: 1, created_on: '2015-09-12', created_by: 'pba' )
+Issue.create( description: 'sample issue', color: 'red', status: 'To do', project_id: 1, created_on: '2015-09-12', created_by: 'pba', updated_on: '2024-11-18' )

@@ -16,13 +16,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_30_134749) do
 
   create_table "issues", force: :cascade do |t|
     t.text "description"
+    t.string "color"
     t.string "status"
     t.integer "project_id", default: 0, null: false
     t.datetime "created_on", precision: nil, null: false
     t.string "created_by"
     t.datetime "updated_on", precision: nil
     t.string "updated_by"
-    t.string "color"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -32,14 +32,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_30_134749) do
     t.string "created_by"
     t.datetime "updated_on", precision: nil
     t.string "updated_by"
-  end
-
-  create_table "statuses", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.datetime "created_on", precision: nil, null: false
-    t.datetime "updated_on", precision: nil
-    t.index ["name"], name: "statuses_name"
   end
 
   create_table "users", force: :cascade do |t|

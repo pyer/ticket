@@ -40,10 +40,10 @@ class Issue < ActiveRecord::Base
     end
   end
 
-  def self.update_status(id, status_id)
+  def self.update_status(id, status)
     issue = Issue.find(id)
     if !issue.nil?
-      issue.status      = Issue.status_name_where_id_is(status_id)
+      issue.status      = status
       issue.updated_on  = Time.now
       issue.updated_by  = User.current.login
       issue.save

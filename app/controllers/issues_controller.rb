@@ -30,7 +30,8 @@ class IssuesController < ApplicationController
   end
 
   def move
-    Issue.update_status(params[:id], params[:status])
+    st = helpers.status_name(params[:status])
+    Issue.update_status(params[:id], st)
 #    redirect_to issues_url
   end
 

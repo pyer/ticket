@@ -25,9 +25,12 @@ class Issue < ActiveRecord::Base
   end
 
   def self.current_values(id)
-    issue = Issue.find(id.to_i)
-    return  issue.description, issue.status, issue.color, issue.project_id if !issue.nil?
-    return default_values
+    begin
+      issue = Issue.find(id.to_i)
+      return  issue.description, issue.color, issue.status, issue.project_id
+    rescue
+      return default_values
+    end
   end
 
   def self.create_new(description, color, status, project_id)

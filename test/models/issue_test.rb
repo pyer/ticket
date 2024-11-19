@@ -22,6 +22,28 @@ class IssueTest < ActiveSupport::TestCase
     assert_equal 0,       project_id
   end
 
+  test "current values of existing issue" do
+    user = User.try_to_login('pba','pba')
+    assert user.logged?
+    desc, color, status, project_id = Issue.current_values(1)
+    assert_equal 'Issue #1', desc
+    assert_equal 'green',    color
+    assert_equal 'To do',    status
+    assert_equal 1,          project_id
+    User.logoff
+  end
+
+  test "current values of unknown issue" do
+    user = User.try_to_login('pba','pba')
+    assert user.logged?
+    desc, color, status, project_id = Issue.current_values(999)
+    assert_equal '',      desc
+    assert_equal 'blue',  color
+    assert_equal 'To do', status
+    assert_equal 0,       project_id
+    User.logoff
+  end
+
   test "colors" do
     assert_equal ['blue', 'green', 'red', 'yellow'], Issue.colors
   end

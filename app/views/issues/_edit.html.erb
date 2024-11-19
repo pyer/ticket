@@ -8,7 +8,7 @@
         <td>
         <select id="color" name="color">
           <% Issue.colors.each do |color| %>
-          <option <%= 'selected="selected"' if @color == color %> value="<%= color %>"><%= color %></option>
+          <option <%= 'selected' if @color == color %> value="<%= color %>"><%= color %></option>
           <% end %>
         </select>
         </td>
@@ -18,7 +18,7 @@
         <td>
         <select id="status" name="status">
           <% Issue.all_statuses.each do |st| %>
-          <option <%= 'selected="selected"' if @status == st %> value="<%= st %>"><%= st %></option>
+          <option <%= 'selected' if @status == st %> value="<%= st %>"><%= st %></option>
           <% end %>
         </select>
         </td>
@@ -28,7 +28,7 @@
         <td>
         <select id="project_id" name="project_id">
           <% Project.list.each do |p| %>
-          <option <%= 'selected="selected"' if @project_id == p.id %> value="<%= p.id %>"><%= p.name %></option>
+          <option <%= 'selected' if @project_id == p.id %> value="<%= p.id %>"><%= p.name %></option>
           <% end %>
         </select>
         </td>

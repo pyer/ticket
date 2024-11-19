@@ -6,9 +6,12 @@ class Project < ActiveRecord::Base
   end
 
   def self.current_values(id)
-    project = Project.find(id.to_i)
-    return project.name, project.description if !project.nil?
-    return default_values
+    begin
+      project = Project.find(id.to_i)
+      return project.name, project.description
+    rescue
+      return default_values
+    end
   end
 
   def self.create_new(name,description)

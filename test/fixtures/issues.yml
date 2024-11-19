@@ -4,6 +4,7 @@ one:
   id:           1
   project_id:   1
   description: 'Issue #1'
+  color:       'green'
   status:      'To do'
   created_on:  '2015-09-20'
   created_by:  'pba'
@@ -12,6 +13,7 @@ two:
   id:           2
   project_id:   1
   description: 'Issue #2'
+  color:       'yellow'
   status:      'Done'
   created_on:  '2015-09-20'
   created_by:  'pba'
@@ -20,6 +22,7 @@ three:
   id:           3
   project_id:   1
   description: 'Issue #3'
+  color:       'red'
   status:      'To do'
   created_on:  '2015-09-20'
   created_by:  'pba'

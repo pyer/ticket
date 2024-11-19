@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   test "admin is a user" do
     user = User.try_to_login('admin','admin')
     assert user, 'admin user is absent'

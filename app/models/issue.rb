@@ -9,6 +9,17 @@ class Issue < ActiveRecord::Base
     return ['blue', 'green', 'red', 'yellow']
   end
 
+  STATUS = ['Archive', 'To do', 'Work in progress', 'To check out', 'Check in progress', 'Done']
+
+  def self.status_name(id)
+    id = 1 if id<1 or id>5
+    STATUS[id]
+  end
+
+  def self.statuses
+    STATUS[1..5]
+  end
+
   def self.current_values(id)
     issue = Issue.find(id.to_i)
     return  issue.description, issue.status, issue.color, issue.project_id if !issue.nil?

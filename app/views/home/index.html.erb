@@ -1,15 +1,15 @@
 <table class="board">
   <thead>
     <tr>
-      <% visible_status.each do |s| %>
+      <% all_statuses.each do |s| %>
       <td><%= s %></td>
       <% end %>
     </tr>
   </thead>
   <tbody>
-      <% all_tickets.each do |st| %>
+      <% all_tickets.each do |at| %>
       <tr>
-        <% st.each do |t| %>
+        <% at.each do |t| %>
           <% if t.nil? %>
             <td class="empty" data-controller="home" data-action="drop->home#drop dragover->home#allowDrop"></td>
           <% else %>

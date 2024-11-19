@@ -16,11 +16,31 @@ class IssueTest < ActiveSupport::TestCase
 
   test "default values" do
     desc, color, status, project_id = Issue.default_values
-    assert_equal desc, ''
-    assert_equal color, 'blue'
-    assert_equal status, 'To do'
-    assert_equal project_id, 0
+    assert_equal '',      desc
+    assert_equal 'blue',  color
+    assert_equal 'To do', status
+    assert_equal 0,       project_id
   end
+
+  test "colors" do
+    assert_equal ['blue', 'green', 'red', 'yellow'], Issue.colors
+  end
+
+  test "status name" do
+    assert_equal "To do",             Issue.status_name(0)
+    assert_equal "To do",             Issue.status_name(1)
+    assert_equal "Work in progress",  Issue.status_name(2)
+    assert_equal "To check out",      Issue.status_name(3)
+    assert_equal "Check in progress", Issue.status_name(4)
+    assert_equal "Done",              Issue.status_name(5)
+    assert_equal "To do",             Issue.status_name(6)
+    assert_equal "To do",             Issue.status_name(42)
+  end
+
+  test "statuses" do
+    assert_equal ['To do', 'Work in progress', 'To check out', 'Check in progress', 'Done'], Issue.statuses
+  end
+
 
   test "check create new issue" do
     user = User.try_to_login('pba','pba')

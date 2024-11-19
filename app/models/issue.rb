@@ -16,7 +16,11 @@ class Issue < ActiveRecord::Base
     STATUS[id]
   end
 
-  def self.statuses
+  def self.all_statuses
+    STATUS
+  end
+
+  def self.visible_statuses
     STATUS[1..5]
   end
 

@@ -38,7 +38,8 @@ class IssueTest < ActiveSupport::TestCase
   end
 
   test "statuses" do
-    assert_equal ['To do', 'Work in progress', 'To check out', 'Check in progress', 'Done'], Issue.statuses
+    assert_equal ['Archive', 'To do', 'Work in progress', 'To check out', 'Check in progress', 'Done'], Issue.all_statuses
+    assert_equal [           'To do', 'Work in progress', 'To check out', 'Check in progress', 'Done'], Issue.visible_statuses
   end
 
 

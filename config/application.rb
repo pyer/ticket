@@ -32,11 +32,11 @@ module Ticket
     end
 
     def version
-      "2.0"
+      "2.1"
     end
 
     def copyright
-      "2024 Pierre BAZONNARD"
+      "2025 Pierre BAZONNARD"
     end
 
 
